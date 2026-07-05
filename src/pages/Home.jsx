@@ -9,6 +9,7 @@ import Brands from '../components/sections/home/Brands';
 import ClientsSection from '../components/sections/home/ClientsSection';
 import Process from '../components/sections/home/Process';
 import Testimonials from '../components/sections/home/Testimonials';
+import BlogSection from '../components/sections/home/BlogSection';
 import FAQ from '../components/sections/home/FAQ';
 import ContactCTA from '../components/sections/home/ContactCTA';
 
@@ -26,6 +27,7 @@ export default function Home() {
       <ClientsSection />
       <Process />
       <Testimonials />
+      <BlogSection />
       <FAQ />
       <ContactCTA />
     </>

@@ -1,54 +1,52 @@
-import * as Icons from 'lucide-react';
+import { Search, ClipboardCheck, Camera, Monitor, Headphones } from 'lucide-react';
 import SectionHeader from '../../shared/SectionHeader';
 import ScrollReveal from '../../shared/ScrollReveal';
 import { PROCESS_STEPS } from '../../../utils/constants';
 
 const iconMap = {
-  1: Icons.MessageSquare,
-  2: Icons.ClipboardList,
-  3: Icons.Wrench,
-  4: Icons.CheckCircle2,
-  5: Icons.Headphones,
+  1: Search,
+  2: ClipboardCheck,
+  3: Camera,
+  4: Monitor,
+  5: Headphones,
 };
 
 export default function Process() {
   return (
-    <section id="process" className="py-20 md:py-28 bg-background">
-      <div className="container-page">
+    <section id="process" className="py-20 md:py-28 bg-primary-dark relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+      </div>
+
+      <div className="container-page relative z-10">
         <SectionHeader
-          title="Our Process"
-          subtitle="A streamlined, professional approach to delivering your security solution from concept to completion."
+          title="How We Work"
+          subtitle="Our proven 5-step process ensures your security system is designed, installed, and supported with precision and care."
+          light
         />
 
-        <div className="relative">
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/30 to-transparent -translate-x-1/2" />
+        <div className="grid md:grid-cols-5 gap-6 relative">
+          <div className="hidden md:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/50 to-accent/20" />
 
-          <div className="space-y-12 md:space-y-16">
-            {PROCESS_STEPS.map((step, i) => {
-              const Icon = iconMap[step.step];
-              return (
-                <ScrollReveal key={step.step} direction={i % 2 === 0 ? 'left' : 'right'}>
-                  <div className="flex gap-6 md:gap-8 relative z-10">
-                    <div className="flex flex-col items-center shrink-0 w-16 md:w-20 relative">
-                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border-4 border-primary flex items-center justify-center z-10">
-                        <span className="text-xl md:text-2xl font-bold text-primary">{step.step}</span>
-                      </div>
-                      {i < PROCESS_STEPS.length - 1 && (
-                        <div className="absolute top-14 left-1/2 w-0.5 h-full bg-border -translate-x-1/2 hidden lg:block" />
-                      )}
-                    </div>
-                    <div className="flex-1 pt-2">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-bold text-primary mb-2">{step.title}</h3>
-                      <p className="text-text-secondary leading-relaxed">{step.description}</p>
-                    </div>
+          {PROCESS_STEPS.map((step, i) => {
+            const Icon = iconMap[step.step];
+            return (
+              <ScrollReveal key={step.step} delay={i * 0.1}>
+                <div className="relative flex flex-col items-center text-center group">
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-accent/30 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                    <Icon className="w-7 h-7 text-white group-hover:text-white transition-colors" />
                   </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
+                  <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-accent flex items-center justify-center text-xs font-bold text-white z-20 shadow-lg">
+                    {step.step}
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

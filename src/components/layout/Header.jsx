@@ -29,8 +29,8 @@ export default function Header() {
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container-page flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 text-primary font-bold text-xl">
-          <Shield className="w-6 h-6" />
+        <Link to="/" className={`flex items-center gap-2 font-bold text-xl transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
+          <Shield className={`w-6 h-6 transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-accent-light'}`} />
           <span>{COMPANY.name}</span>
         </Link>
 

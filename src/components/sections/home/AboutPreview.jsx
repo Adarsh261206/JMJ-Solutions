@@ -15,10 +15,13 @@ export default function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal direction="left">
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <ShieldIcon />
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/product-cctv.jpg"
+                  alt="CCTV Camera Installation"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent text-white p-6 rounded-2xl shadow-2xl hidden md:block">
                 <div className="text-3xl font-bold">150+</div>
@@ -56,13 +59,5 @@ export default function AboutPreview() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ShieldIcon() {
-  return (
-    <svg className="w-32 h-32 text-white/10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-      <path d="M12 2L3 7v6c0 5.25 3.83 10.15 9 11 5.17-.85 9-5.75 9-11V7l-9-5z" />
-    </svg>
   );
 }

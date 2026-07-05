@@ -1,0 +1,74 @@
+import { Link } from 'react-router-dom';
+import { Calendar, ArrowRight, Clock } from 'lucide-react';
+import SectionHeader from '../../shared/SectionHeader';
+import ScrollReveal from '../../shared/ScrollReveal';
+import { BLOG_POSTS } from '../../../utils/constants';
+
+export default function BlogSection() {
+  return (
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container-page">
+        <SectionHeader
+          title="Our Latest Blog"
+          subtitle="Checkout our blog articles and product updates — expert insights on security, surveillance, and safety solutions."
+        />
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {BLOG_POSTS.slice(0, 4).map((post, i) => (
+            <ScrollReveal key={post.id} delay={i * 0.05}>
+              <Link
+                to={`/blog/${post.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-xl block"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      {post.tags[0]}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 text-xs text-text-secondary mb-3">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" />
+                      {post.author}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:text-accent-light transition-colors">
+                    Read More <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal className="text-center mt-12">
+          <Link
+            to="/blog"
+            className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 px-8 py-4 text-lg bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl active:scale-[0.98]"
+          >
+            View All Articles <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}

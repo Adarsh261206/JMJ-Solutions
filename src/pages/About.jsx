@@ -31,8 +31,12 @@ export default function About() {
     <>
       <SEO title="About Us" />
 
-      <section className="bg-primary-dark py-24 text-white">
-        <div className="container-page">
+      <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/about.jpg" alt="" className="w-full h-full object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
+        </div>
+        <div className="container-page relative z-10">
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About {COMPANY.name}</h1>
             <p className="text-lg text-white/80 max-w-2xl">
@@ -46,8 +50,13 @@ export default function About() {
         <div className="container-page">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
-              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl h-80 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold opacity-20">{COMPANY.foundingYear}</span>
+              <div className="rounded-2xl overflow-hidden shadow-xl h-80">
+                <img
+                  src="/images/service-cctv.jpg"
+                  alt="CCTV Installation"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
@@ -73,35 +82,41 @@ export default function About() {
 
       <section className="py-20 bg-muted">
         <div className="container-page">
-          <ScrollReveal>
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">What Drives Us</span>
-            <h2 className="text-3xl font-bold text-primary mt-2 mb-12">Mission & Vision</h2>
-          </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-8">
             <ScrollReveal direction="left">
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-7 h-7 text-accent" />
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full">
+                <div className="h-48 overflow-hidden">
+                  <img src="/images/industry-corporate.jpg" alt="Our Mission" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Our Mission</h3>
-                <p className="text-gray-600">
-                  To provide world-class security and surveillance solutions that protect what matters most to our
-                  clients. We are committed to delivering innovative, reliable, and cost-effective systems backed
-                  by exceptional service and support.
-                </p>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                    <Target className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4">Our Mission</h3>
+                  <p className="text-gray-600">
+                    To provide world-class security and surveillance solutions that protect what matters most to our
+                    clients. We are committed to delivering innovative, reliable, and cost-effective systems backed
+                    by exceptional service and support.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Eye className="w-7 h-7 text-primary" />
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full">
+                <div className="h-48 overflow-hidden">
+                  <img src="/images/industry-corporate.jpg" alt="Our Vision" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">Our Vision</h3>
-                <p className="text-gray-600">
-                  To be the most trusted name in security and surveillance across Mumbai, setting new benchmarks
-                  in quality, innovation, and customer satisfaction. We envision a safer future powered by
-                  advanced technology and dedicated service.
-                </p>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                    <Eye className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4">Our Vision</h3>
+                  <p className="text-gray-600">
+                    To be the most trusted name in security and surveillance across Mumbai, setting new benchmarks
+                    in quality, innovation, and customer satisfaction. We envision a safer future powered by
+                    advanced technology and dedicated service.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           </div>

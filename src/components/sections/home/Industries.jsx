@@ -28,12 +28,21 @@ export default function Industries() {
             const Icon = iconMap[industry.icon] || Icons.Building2;
             return (
               <ScrollReveal key={industry.name} delay={i * 0.03}>
-                <div className="bg-white rounded-2xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg group">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                <div className="group relative rounded-2xl overflow-hidden h-64 border border-border hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent group-hover:from-primary-dark/95 transition-all duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-accent transition-colors duration-300">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-1">{industry.name}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed">{industry.description}</p>
                   </div>
-                  <h3 className="font-semibold text-primary mb-1">{industry.name}</h3>
-                  <p className="text-text-secondary text-sm">{industry.description}</p>
                 </div>
               </ScrollReveal>
             );
