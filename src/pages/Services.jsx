@@ -1,4 +1,4 @@
-import { Camera, DoorOpen, Phone, Fingerprint, ArrowLeftRight, Grid3x3, Check, Shield } from 'lucide-react';
+import { Camera, DoorOpen, Phone, Fingerprint, ArrowLeftRight, Grid3x3, Wifi, ScanLine, Moon, Monitor, Check, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/shared/SEO';
 import ScrollReveal from '../components/shared/ScrollReveal';
@@ -11,6 +11,10 @@ const iconMap = {
   Fingerprint,
   ArrowLeftRight,
   Grid3x3,
+  Wifi,
+  ScanLine,
+  Moon,
+  Monitor,
 };
 
 export default function Services() {

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Check, ArrowLeft, Phone, Shield } from 'lucide-react';
+import { Check, ArrowLeft, Phone, Shield, ChevronRight } from 'lucide-react';
 import SEO from '../components/shared/SEO';
 import ScrollReveal from '../components/shared/ScrollReveal';
 import Button from '../components/shared/Button';
@@ -20,6 +20,10 @@ export default function ProductDetail() {
       </div>
     );
   }
+
+  const variantKeys = service.variants && service.variants.length > 0
+    ? Object.keys(service.variants[0]).filter(k => k !== 'name')
+    : [];
 
   return (
     <>
@@ -48,9 +52,9 @@ export default function ProductDetail() {
 
       <section className="py-20 bg-white">
         <div className="container-page">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <ScrollReveal direction="left">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-2xl overflow-hidden shadow-xl sticky top-24">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -90,13 +94,55 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted">
+      {service.variants && service.variants.length > 0 && (
+        <section className="py-16 bg-muted">
+          <div className="container-page">
+            <ScrollReveal className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-primary mb-4">Available Models</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Choose from our range of {service.title.toLowerCase()} models to find the perfect fit for your needs
+              </p>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {service.variants.map((variant, i) => (
+                <ScrollReveal key={variant.name} delay={i * 0.1}>
+                  <div className="bg-white rounded-2xl p-6 border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                      <Shield className="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 className="text-lg font-bold text-primary mb-4">{variant.name}</h3>
+                    <div className="space-y-3 flex-1">
+                      {Object.entries(variant).filter(([k]) => k !== 'name').map(([key, value]) => (
+                        <div key={key}>
+                          <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider block mb-0.5">
+                            {key.replace(/([A-Z])/g, ' $1').trim()}
+                          </span>
+                          <span className="text-sm text-primary font-medium">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link
+                      to="/contact"
+                      className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-primary text-white font-semibold rounded-lg px-4 py-2.5 hover:bg-primary-light transition-colors text-sm"
+                    >
+                      Enquire Now <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="py-16 bg-white">
         <div className="container-page">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-primary mb-6 text-center">Industries We Serve</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {service.industries.map((ind) => (
-                <span key={ind} className="bg-white text-primary px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-border">
+                <span key={ind} className="bg-muted text-primary px-5 py-2.5 rounded-full text-sm font-medium shadow-sm border border-border">
                   {ind}
                 </span>
               ))}
