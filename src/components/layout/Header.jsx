@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Shield, Phone, ChevronDown } from 'lucide-react';
 import { NAV_LINKS, PRODUCT_CATEGORIES, SERVICES, COMPANY } from '../../utils/constants';
 
-function ProductsDropdown() {
+function ProductsDropdown({ scrolled }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   const location = useLocation();
@@ -34,9 +34,7 @@ function ProductsDropdown() {
       <Link
         to="/services"
         className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${
-          location.pathname === '/services'
-            ? 'text-accent'
-            : 'text-text-primary hover:text-accent'
+          scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
         }`}
       >
         Products <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
@@ -140,7 +138,7 @@ export default function Header() {
           >
             About
           </Link>
-          <ProductsDropdown />
+          <ProductsDropdown scrolled={scrolled} />
           <Link
             to="/clients"
             className={`text-sm font-medium transition-colors duration-200 ${
