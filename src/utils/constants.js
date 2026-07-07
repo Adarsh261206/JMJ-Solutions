@@ -184,26 +184,26 @@ export const BRANDS = [
 ];
 
 export const COMMERCIAL_CLIENTS = [
-  { name: 'Lechler India Pvt Ltd', location: 'Wagle Estate, Thane' },
-  { name: 'Gilly Professional Kitchen', location: 'Bhoomi World, Bhivandi' },
-  { name: 'Semantic India Pvt Ltd', location: 'Mahape, Navi Mumbai' },
-  { name: 'Active Industries', location: 'Upwan, Thane' },
-  { name: 'Techvisio Design', location: 'Centerm Business Square, Wagle Estate, Thane' },
-  { name: 'Centrum Business Square B Wing', location: 'Wagle Estate, Thane' },
-  { name: 'From Packaging Systems India Pvt Ltd', location: 'Panvel, Aurangabad, Khanapur' },
-  { name: 'Indusprint Logistics Private Ltd', location: 'Ulhasnagar' },
+  { name: 'Lechler India Pvt Ltd', location: 'Wagle Estate, Thane', image: '/images/clients/commercial-1.jpg' },
+  { name: 'Gilly Professional Kitchen', location: 'Bhoomi World, Bhivandi', image: '/images/clients/commercial-2.jpg' },
+  { name: 'Semantic India Pvt Ltd', location: 'Mahape, Navi Mumbai', image: '/images/clients/commercial-3.jpg' },
+  { name: 'Active Industries', location: 'Upwan, Thane', image: '/images/clients/commercial-4.jpg' },
+  { name: 'Techvisio Design', location: 'Centerm Business Square, Wagle Estate, Thane', image: '/images/clients/commercial-5.jpg' },
+  { name: 'Centrum Business Square B Wing', location: 'Wagle Estate, Thane', image: '/images/clients/commercial-6.jpg' },
+  { name: 'From Packaging Systems India Pvt Ltd', location: 'Panvel, Aurangabad, Khanapur', image: '/images/clients/commercial-7.jpg' },
+  { name: 'Indusprint Logistics Private Ltd', location: 'Ulhasnagar', image: '/images/clients/commercial-8.jpg' },
 ];
 
 export const RESIDENTIAL_CLIENTS = [
-  { name: 'Runwal Garden City', location: 'Balkum, Thane' },
-  { name: 'Vedant CHSL', location: 'Vartak Nagar, Thane' },
-  { name: 'Ashar Sapphire', location: 'Dhokali, Thane' },
-  { name: 'Lodha Magestica & Casa Royal', location: 'Lodha Group, Balkum, Thane' },
-  { name: 'Wadhwa Platina', location: 'Kolshet Road, Thane' },
-  { name: 'Neelkanth Green CHSL', location: 'Manpada, Thane' },
-  { name: 'Godrej Emerald', location: 'Owala, GB Road, Thane' },
-  { name: 'Riverview Society, Lodha Splendora', location: 'Owala, GB Road, Thane' },
-  { name: 'Rain Art CHSL', location: 'Vartak Nagar, Thane' },
+  { name: 'Runwal Garden City', location: 'Balkum, Thane', image: '/images/clients/residential-1.jpg' },
+  { name: 'Vedant CHSL', location: 'Vartak Nagar, Thane', image: '/images/clients/residential-2.jpg' },
+  { name: 'Ashar Sapphire', location: 'Dhokali, Thane', image: '/images/clients/residential-3.jpg' },
+  { name: 'Lodha Magestica & Casa Royal', location: 'Lodha Group, Balkum, Thane', image: '/images/clients/residential-4.jpg' },
+  { name: 'Wadhwa Platina', location: 'Kolshet Road, Thane', image: '/images/clients/residential-5.jpg' },
+  { name: 'Neelkanth Green CHSL', location: 'Manpada, Thane', image: '/images/clients/residential-6.jpg' },
+  { name: 'Godrej Emerald', location: 'Owala, GB Road, Thane', image: '/images/clients/residential-7.jpg' },
+  { name: 'Riverview Society, Lodha Splendora', location: 'Owala, GB Road, Thane', image: '/images/clients/residential-8.jpg' },
+  { name: 'Rain Art CHSL', location: 'Vartak Nagar, Thane', image: '/images/clients/residential-9.jpg' },
 ];
 
 export const PROCESS_STEPS = [
