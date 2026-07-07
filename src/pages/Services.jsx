@@ -2,7 +2,7 @@ import { Camera, DoorOpen, Phone, Fingerprint, ArrowLeftRight, Grid3x3, Wifi, Sc
 import { Link } from 'react-router-dom';
 import SEO from '../components/shared/SEO';
 import ScrollReveal from '../components/shared/ScrollReveal';
-import { SERVICES } from '../utils/constants';
+import { PRODUCT_CATEGORIES, SERVICES } from '../utils/constants';
 
 const iconMap = {
   Camera,
@@ -16,6 +16,83 @@ const iconMap = {
   Moon,
   Monitor,
 };
+
+function CategorySection({ category, index }) {
+  const catProducts = SERVICES.filter((s) => category.productIds.includes(s.id));
+  if (!catProducts.length) return null;
+  const isEven = index % 2 === 0;
+
+  return (
+    <section className={`py-16 md:py-20 ${isEven ? 'bg-white' : 'bg-muted'}`}>
+      <div className="container-page">
+        <ScrollReveal>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
+              <span className="text-white font-bold text-xl">{index + 1}</span>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-primary">{category.name}</h2>
+              <p className="text-text-secondary">{category.description}</p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {catProducts.map((service) => {
+            const Icon = iconMap[service.icon];
+            return (
+              <ScrollReveal key={service.id}>
+                <div className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
+                      {Icon && (
+                        <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                      )}
+                      <h3 className="text-white font-bold text-lg drop-shadow-lg">{service.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">{service.shortDesc}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {service.benefits.slice(0, 3).map((b) => (
+                        <span key={b} className="text-xs bg-accent/5 text-accent px-2.5 py-1 rounded-full font-medium truncate max-w-full">
+                          {b}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      <Link
+                        to={`/product/${service.id}`}
+                        className="flex-1 text-center bg-primary text-white font-semibold rounded-lg px-4 py-2.5 hover:bg-primary-light transition-colors text-sm"
+                      >
+                        View Details
+                      </Link>
+                      <Link
+                        to="/contact"
+                        className="flex-1 text-center bg-accent text-white font-semibold rounded-lg px-4 py-2.5 hover:bg-accent-light transition-colors text-sm"
+                      >
+                        Get Quote
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Services() {
   return (
@@ -41,81 +118,9 @@ export default function Services() {
         </div>
       </section>
 
-      {SERVICES.map((service, i) => {
-        const Icon = iconMap[service.icon];
-        const isEven = i % 2 === 0;
-
-        return (
-          <section
-            key={service.id}
-            id={service.id}
-            className={`py-20 ${isEven ? 'bg-white' : 'bg-muted'}`}
-          >
-            <div className="container-page">
-              <div className={`grid md:grid-cols-2 gap-12 items-center ${isEven ? '' : 'md:direction-rtl'}`}>
-                <ScrollReveal direction={isEven ? 'left' : 'right'}>
-                  <div className="rounded-2xl overflow-hidden h-72 md:h-96 shadow-xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </ScrollReveal>
-
-                <ScrollReveal direction={isEven ? 'right' : 'left'}>
-                  {Icon && (
-                    <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-7 h-7 text-accent" />
-                    </div>
-                  )}
-                  <h2 className="text-3xl font-bold text-primary mb-4">{service.title}</h2>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-primary mb-3">Key Benefits</h4>
-                    <ul className="space-y-2">
-                      {service.benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-start gap-2 text-gray-600">
-                          <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-primary mb-2">Industries Served</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.industries.map((ind) => (
-                        <span key={ind} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
-                          {ind}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    <Link
-                      to={`/product/${service.id}`}
-                      className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 px-6 py-3 bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl active:scale-[0.98]"
-                    >
-                      View Product Page
-                    </Link>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 px-6 py-3 bg-accent text-white hover:bg-accent-light shadow-lg hover:shadow-xl active:scale-[0.98]"
-                    >
-                      Get a Free Quote
-                    </Link>
-                  </div>
-                </ScrollReveal>
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      {PRODUCT_CATEGORIES.map((cat, i) => (
+        <CategorySection key={cat.name} category={cat} index={i} />
+      ))}
     </>
   );
 }

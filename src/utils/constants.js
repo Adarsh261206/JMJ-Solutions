@@ -31,6 +31,33 @@ export const NAV_LINKS = [
   { label: 'Contact', path: '/contact' },
 ];
 
+export const PRODUCT_CATEGORIES = [
+  {
+    name: 'CCTV Cameras',
+    icon: 'Camera',
+    description: 'Advanced surveillance cameras for every need',
+    productIds: ['cctv', 'ptz', 'ip', 'wireless', 'lpr', 'night-vision'],
+  },
+  {
+    name: 'Recording & Storage',
+    icon: 'Monitor',
+    description: 'DVR and NVR systems for video management',
+    productIds: ['dvr', 'nvr'],
+  },
+  {
+    name: 'Access Control',
+    icon: 'Fingerprint',
+    description: 'Secure entry management solutions',
+    productIds: ['access-control', 'video-door', 'boom-barrier', 'tripod'],
+  },
+  {
+    name: 'Communication',
+    icon: 'Phone',
+    description: 'Enterprise telephony and intercom systems',
+    productIds: ['epabx'],
+  },
+];
+
 export const SERVICES = [
   {
     id: 'cctv',
