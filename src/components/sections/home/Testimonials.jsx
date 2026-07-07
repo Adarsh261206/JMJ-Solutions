@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     name: 'Rajesh Sharma',
     designation: 'Secretary',
     company: 'Runwal Garden City, Thane',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
   },
   {
     quote:
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     name: 'Priya Menon',
     designation: 'Facilities Manager',
     company: 'Semantic India Pvt Ltd, Navi Mumbai',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
   },
   {
     quote:
@@ -25,7 +25,7 @@ const TESTIMONIALS = [
     name: 'Amit Deshpande',
     designation: 'Operations Head',
     company: 'Lechler India Pvt Ltd, Thane',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Amit',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
   },
 ];
 
@@ -55,7 +55,8 @@ export default function Testimonials() {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full bg-primary/10 shrink-0"
+                    className="w-12 h-12 rounded-full object-cover bg-primary/10 shrink-0"
+                    loading="lazy"
                   />
                   <div>
                     <p className="font-bold text-primary">{testimonial.name}</p>
