@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     name: 'Rajesh Sharma',
     designation: 'Secretary',
     company: 'Runwal Garden City, Thane',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face',
   },
   {
     quote:
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     name: 'Priya Menon',
     designation: 'Facilities Manager',
     company: 'Semantic India Pvt Ltd, Navi Mumbai',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face',
   },
   {
     quote:
@@ -25,7 +25,7 @@ const TESTIMONIALS = [
     name: 'Amit Deshpande',
     designation: 'Operations Head',
     company: 'Lechler India Pvt Ltd, Thane',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
   },
 ];
 
