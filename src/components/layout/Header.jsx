@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Shield, Phone, ChevronDown } from 'lucide-react';
 import { NAV_LINKS, PRODUCT_CATEGORIES, SERVICES, COMPANY } from '../../utils/constants';
 
-function ProductsDropdown() {
+function ProductsDropdown({ isHome, scrolled }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   const location = useLocation();
@@ -33,7 +33,9 @@ function ProductsDropdown() {
     <div ref={ref} className="relative">
       <Link
         to="/services"
-        className="flex items-center gap-1 text-sm font-medium text-text-primary hover:text-accent transition-colors duration-200"
+        className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${
+          isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
+        }`}
       >
         Products <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
       </Link>
@@ -110,8 +112,8 @@ export default function Header() {
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container-page flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className={`flex items-center gap-2 font-bold text-xl transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-primary'}`}>
-          <Shield className={`w-6 h-6 transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-accent'}`} />
+        <Link to="/" className={`flex items-center gap-2 font-bold text-xl transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-white'}`}>
+          <Shield className={`w-6 h-6 transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-accent-light'}`} />
           <span>{COMPANY.name}</span>
         </Link>
 
@@ -119,7 +121,9 @@ export default function Header() {
           <Link
             to="/"
             className={`text-sm font-medium transition-colors duration-200 ${
-              location.pathname === '/' ? 'text-accent' : 'text-text-primary hover:text-accent'
+              location.pathname === '/'
+                ? 'text-accent'
+                : isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
             }`}
           >
             Home
@@ -127,16 +131,20 @@ export default function Header() {
           <Link
             to="/about"
             className={`text-sm font-medium transition-colors duration-200 ${
-              location.pathname === '/about' ? 'text-accent' : 'text-text-primary hover:text-accent'
+              location.pathname === '/about'
+                ? 'text-accent'
+                : isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
             }`}
           >
             About
           </Link>
-          <ProductsDropdown />
+          <ProductsDropdown isHome={isHome} scrolled={scrolled} />
           <Link
             to="/clients"
             className={`text-sm font-medium transition-colors duration-200 ${
-              location.pathname === '/clients' ? 'text-accent' : 'text-text-primary hover:text-accent'
+              location.pathname === '/clients'
+                ? 'text-accent'
+                : isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
             }`}
           >
             Clients
@@ -144,7 +152,9 @@ export default function Header() {
           <Link
             to="/blog"
             className={`text-sm font-medium transition-colors duration-200 ${
-              location.pathname === '/blog' ? 'text-accent' : 'text-text-primary hover:text-accent'
+              location.pathname === '/blog'
+                ? 'text-accent'
+                : isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
             }`}
           >
             Blog
@@ -152,7 +162,9 @@ export default function Header() {
           <Link
             to="/contact"
             className={`text-sm font-medium transition-colors duration-200 ${
-              location.pathname === '/contact' ? 'text-accent' : 'text-text-primary hover:text-accent'
+              location.pathname === '/contact'
+                ? 'text-accent'
+                : isHome ? 'text-text-primary hover:text-accent' : scrolled ? 'text-text-primary hover:text-accent' : 'text-white/90 hover:text-white'
             }`}
           >
             Contact
@@ -167,7 +179,9 @@ export default function Header() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden p-2 rounded-lg text-primary hover:bg-muted transition-colors"
+          className={`lg:hidden p-2 rounded-lg transition-colors ${
+            isHome ? 'text-primary hover:bg-muted' : scrolled ? 'text-primary hover:bg-muted' : 'text-white hover:bg-white/10'
+          }`}
           aria-label="Toggle navigation"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
