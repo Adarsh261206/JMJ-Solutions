@@ -20,21 +20,19 @@ function CategorySection({ category, index }) {
   return (
     <div className="mb-16 last:mb-0">
       <ScrollReveal>
-        <div className="group/banner mb-8">
-          <div className={`relative overflow-hidden rounded-2xl border border-border/60 p-6 md:p-8 transition-all duration-500 hover:shadow-lg hover:border-transparent bg-white hover:bg-gradient-to-r ${colors.from} ${colors.to}`}>
-            <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl opacity-0 group-hover/banner:opacity-100 transition-opacity duration-500" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-0 group-hover/banner:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10 flex items-center gap-4">
+        <div className="mb-8">
+          <div className="rounded-2xl border border-border/60 p-6 md:p-8 bg-white">
+            <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-border/60 bg-surface">
                 <span className="font-bold text-xl text-text-secondary">{index + 1}</span>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className={`text-xl md:text-2xl font-bold transition-colors duration-500 text-text-primary group-hover/banner:text-white`}>{category.name}</h3>
-                <p className={`text-sm mt-0.5 transition-colors duration-500 text-text-secondary group-hover/banner:text-white/80`}>{category.description}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-text-primary">{category.name}</h3>
+                <p className="text-sm mt-0.5 text-text-secondary">{category.description}</p>
               </div>
               <Link
                 to="/services"
-                className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-text-secondary group-hover/banner:text-white/90 hover:!text-white bg-surface group-hover/banner:bg-white/10 hover:!bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-border/60 group-hover/banner:border-white/10 transition-all"
+                className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-text-secondary hover:text-white bg-surface hover:bg-accent px-4 py-2 rounded-full border border-border/60 hover:border-accent transition-all"
               >
                 View All <ArrowRight className="w-3 h-3" />
               </Link>
