@@ -113,9 +113,7 @@ export default function Header() {
     }`}>
       <div className="container-page flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white shrink-0">
-            <img src="/logo.png" alt="JMJ Solutions" className="h-6 w-auto" />
-          </span>
+          <img src="/logo.png" alt="JMJ Solutions" className="h-9 w-auto" />
           <span className={`font-bold text-xl transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-white'}`}>{COMPANY.name}</span>
         </Link>
 
