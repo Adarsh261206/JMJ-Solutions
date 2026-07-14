@@ -31,8 +31,10 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-surface">
-      <div className="container-page">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-surface to-white relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="container-page relative">
         <SectionHeader
           title="What Our Clients Say"
           subtitle="Hear from the businesses and communities that trust us to keep their premises secure."
@@ -41,26 +43,28 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TESTIMONIALS.map((testimonial, i) => (
             <ScrollReveal key={testimonial.name} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-8 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-xl h-full flex flex-col">
+              <div className="bg-white rounded-2xl p-8 shadow-lg shadow-black/5 ring-1 ring-black/5 hover:ring-accent/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 h-full flex flex-col">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, s) => (
                     <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <Quote className="w-8 h-8 text-accent/20 mb-3" />
-                <p className="text-text-secondary leading-relaxed mb-6 flex-1">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/5 to-accent/10 flex items-center justify-center mb-4 ring-1 ring-accent/10">
+                  <Quote className="w-5 h-5 text-accent/40" />
+                </div>
+                <p className="text-text-secondary leading-relaxed mb-6 flex-1 text-sm">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <div className="border-t border-border pt-4 flex items-center gap-3">
+                <div className="border-t border-border/60 pt-4 flex items-center gap-3">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover bg-primary/10 shrink-0"
+                    className="w-12 h-12 rounded-full object-cover bg-primary/10 shrink-0 ring-2 ring-white shadow-md"
                     loading="lazy"
                   />
                   <div>
-                    <p className="font-bold text-primary">{testimonial.name}</p>
-                    <p className="text-sm text-text-secondary">
+                    <p className="font-bold text-primary text-sm">{testimonial.name}</p>
+                    <p className="text-xs text-text-secondary">
                       {testimonial.designation}, {testimonial.company}
                     </p>
                   </div>

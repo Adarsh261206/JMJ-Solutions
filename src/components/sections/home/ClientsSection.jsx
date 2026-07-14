@@ -11,8 +11,8 @@ function ClientCard({ client, type }) {
 
   return (
     <div
-      className={`group bg-white rounded-xl border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${
-        isCommercial ? 'border-blue-100 hover:border-blue-300' : 'border-emerald-100 hover:border-emerald-300'
+      className={`group bg-white rounded-xl border overflow-hidden shadow-md shadow-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ${
+        isCommercial ? 'border-blue-100 hover:border-blue-300 hover:shadow-blue-500/10' : 'border-emerald-100 hover:border-emerald-300 hover:shadow-emerald-500/10'
       }`}
     >
       <a
@@ -101,7 +101,7 @@ export default function ClientsSection() {
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
           <ScrollReveal direction="left">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 md:p-8 border border-blue-100 shadow-sm">
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-5 md:p-8 border border-blue-100 shadow-xl shadow-blue-500/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
                   <Building className="w-6 h-6 text-white" />
@@ -122,7 +122,7 @@ export default function ClientsSection() {
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-5 md:p-8 border border-emerald-100 shadow-sm">
+            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-5 md:p-8 border border-emerald-100 shadow-xl shadow-emerald-500/5">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shrink-0">
                   <Home className="w-6 h-6 text-white" />

@@ -47,7 +47,7 @@ function CategorySection({ category, index }) {
         {catProducts.map((service, i) => (
           <ScrollReveal key={service.id} delay={i * 0.04}>
             <Link to={`/product/${service.id}`} className="group block">
-              <div className="bg-white rounded-2xl overflow-hidden border border-border/60 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 ring-1 ring-black/5 hover:ring-accent/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 h-full">
                 <div className="relative h-52 overflow-hidden">
                   <img
                     src={service.image}
@@ -64,7 +64,7 @@ function CategorySection({ category, index }) {
                   <p className="text-text-secondary text-sm leading-relaxed line-clamp-2 mb-4">{service.shortDesc}</p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {service.benefits.slice(0, 3).map((b) => (
-                      <span key={b} className="text-[11px] font-medium bg-accent/5 text-accent px-2.5 py-1 rounded-full truncate max-w-full">
+                      <span key={b} className="text-[11px] font-medium bg-gradient-to-r from-accent/5 to-accent/10 text-accent px-2.5 py-1 rounded-full truncate max-w-full ring-1 ring-accent/10">
                         {b}
                       </span>
                     ))}
@@ -84,8 +84,10 @@ function CategorySection({ category, index }) {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-gradient-to-b from-surface to-white relative overflow-hidden">
+    <section id="services" className="py-20 md:py-28 bg-gradient-to-b from-surface via-white to-surface relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-gradient-to-b from-accent/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 -left-20 w-80 h-80 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 -right-20 w-96 h-96 bg-accent/[0.02] rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">
         <SectionHeader
           title="Our Products"
@@ -97,7 +99,7 @@ export default function ServicesSection() {
         ))}
 
         <ScrollReveal className="text-center mt-8">
-          <div className="inline-flex items-center gap-3 bg-primary/5 border border-primary/10 rounded-2xl px-8 py-5">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-accent/5 to-accent/10 border border-accent/10 rounded-2xl px-8 py-5 shadow-lg shadow-accent/5">
             <Shield className="w-5 h-5 text-accent shrink-0" />
             <p className="text-sm text-text-secondary">
               Not sure which product fits your needs? <Link to="/contact" className="text-accent font-semibold hover:underline">Get a free consultation</Link>
