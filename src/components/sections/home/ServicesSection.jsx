@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, ChevronRight, Shield } from 'lucide-react';
 import SectionHeader from '../../shared/SectionHeader';
@@ -23,11 +23,26 @@ export default function ServicesSection() {
   const cats = [{ name: 'All', dot: 'bg-primary', text: 'text-primary', bg: 'bg-primary/10', border: 'border-primary/20' },
     ...PRODUCT_CATEGORIES.map((c) => ({ name: c.name, ...catColors[c.name] }))];
 
+  const touchX = useRef(null);
+
   const scroll = (dir) => {
     if (!scrollRef.current) return;
     const amount = scrollRef.current.clientWidth * 0.8;
     scrollRef.current.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' });
   };
+
+  const onTouchStart = useCallback((e) => {
+    touchX.current = e.touches[0].clientX;
+  }, []);
+
+  const onTouchEnd = useCallback((e) => {
+    if (touchX.current === null) return;
+    const diff = touchX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      scroll(diff > 0 ? 'right' : 'left');
+    }
+    touchX.current = null;
+  }, []);
 
   return (
     <section id="services" className="py-20 md:py-28 bg-surface relative overflow-hidden">
@@ -77,6 +92,8 @@ export default function ServicesSection() {
           <div
             ref={scrollRef}
             className="flex gap-5 overflow-hidden pb-4 -mx-4 px-4"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
           >
             {filtered.map((service, i) => (
               <div key={service.id} className="shrink-0 w-[280px] sm:w-[300px] md:w-[320px]">
