@@ -22,7 +22,7 @@ export default function Brands() {
           <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/30 ring-1 ring-white/10">
             <img
               src="/images/we-deals-brands.jpg"
-              alt="Brands We Deal In"
+              alt="Top security brands — CP Plus, Hikvision, Dahua, ESSL, Crystel — JMJ Solutions Mumbai"
               className="w-full h-auto object-contain bg-white"
               loading="lazy"
             />

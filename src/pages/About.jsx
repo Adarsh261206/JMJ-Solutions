@@ -33,7 +33,7 @@ export default function About() {
 
       <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about.jpg" alt="" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/about.jpg" alt="JMJ Solutions security team — Mumbai's trusted CCTV and surveillance company" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
         </div>
         <div className="container-page relative z-10">

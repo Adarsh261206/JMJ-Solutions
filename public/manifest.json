@@ -1,0 +1,16 @@
+{
+  "name": "JMJ Solutions - Security & Surveillance Systems",
+  "short_name": "JMJ Solutions",
+  "description": "Mumbai's premier security solutions provider. CCTV, Access Control, EPABX, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1A3A5C",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

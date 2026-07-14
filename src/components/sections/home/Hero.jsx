@@ -47,7 +47,7 @@ export default function Hero() {
         >
           <img
             src={slide.image}
-            alt=""
+            alt={`${slide.highlight} — JMJ Solutions security systems Mumbai Thane`}
             className="w-full h-full object-cover"
             loading={i === 0 ? 'eager' : 'lazy'}
           />
