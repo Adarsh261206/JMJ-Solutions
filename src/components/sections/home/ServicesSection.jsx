@@ -140,15 +140,18 @@ export default function ServicesSection() {
         </div>
 
         {/* Dots */}
-        <div className="flex items-center justify-center gap-1.5 mt-6">
+        <div className="flex items-center justify-center mt-6">
           {cats.slice(1).map((cat) => (
             <button
               key={cat.name}
               onClick={() => setActiveCat(cat.name)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className="flex items-center justify-center w-10 h-10"
+              aria-label={`Show ${cat.name} products`}
+            >
+              <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 activeCat === cat.name ? `${cat.dot} w-6` : 'bg-border/60 hover:bg-border'
-              }`}
-            />
+              }`} />
+            </button>
           ))}
         </div>
 

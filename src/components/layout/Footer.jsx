@@ -13,7 +13,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <img src="/logo.png" alt="JMJ Solutions" width={512} height={512} className="h-8 w-auto" />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img src="/logo.png" alt="JMJ Solutions" width={512} height={512} className="h-8 w-auto" />
+              </picture>
               {COMPANY.name}
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
