@@ -18,7 +18,7 @@ export const COMPANY = {
   state: 'Maharashtra',
   pincode: '400606',
   area: 'Mumbai Metropolitan Region',
-  mapEmbed: 'https://www.google.com/maps?q=Govind+Niwas+Siddhivinayak+Park+Thane+West&output=embed',
+  mapEmbed: 'https://www.google.com/maps?q=Govind+Niwas+Shree+Siddhivinayak+Park+CHS+Lokmanya+Nagar+Thane+West&output=embed',
   hours: 'Mon - Sat: 9:00 AM - 7:00 PM',
 };
 
