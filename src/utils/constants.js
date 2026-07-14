@@ -2,8 +2,8 @@ export const COMPANY = {
   name: 'JMJ Solutions',
   tagline: 'Sales & Services',
   description: 'Leading Security & Surveillance System Provider',
-  fullDescription: 'JMJ Solutions is a premier provider of world-class Security & Surveillance Systems. Established in July 2015, we have been delivering quality security solutions in quality time and within customer budget.',
-  foundingYear: 2015,
+  fullDescription: 'JMJ Solutions is a premier provider of world-class Security & Surveillance Systems. Established in July 2016, we have been delivering quality security solutions in quality time and within customer budget.',
+  foundingYear: 2016,
   experience: '10+ Years',
   projectsCompleted: '500+',
   happyClients: '150+',
@@ -13,7 +13,7 @@ export const COMPANY = {
   phone2: '+91 98332 80079',
   contactPerson1: 'Saiprasad G. Nayak',
   contactPerson2: 'Jiteen A. Sawant',
-  address: 'First Floor, Above All In One Classes, Near RJ Thakur, Mahatma Phule Nagar, Thane-West, 400606',
+  address: '01, Govind Niwas, Near Saibaba Temple, Pada No.4, Lokmanya Nagar, Thane - West, Landmark - Siddhivinayak Park society',
   city: 'Thane',
   state: 'Maharashtra',
   pincode: '400606',
@@ -377,6 +377,7 @@ export const RESIDENTIAL_CLIENTS = [
   { name: 'Godrej Emerald', location: 'Owala, GB Road, Thane', image: '/images/clients/residential-7.jpg' },
   { name: 'Riverview Society, Lodha Splendora', location: 'Owala, GB Road, Thane', image: '/images/clients/residential-8.jpg' },
   { name: 'Rain Art CHSL', location: 'Vartak Nagar, Thane', image: '/images/clients/residential-9.jpg' },
+  { name: 'Laxmi Park CHSL', location: 'Thane', image: null },
 ];
 
 export const PROCESS_STEPS = [
@@ -433,7 +434,7 @@ export const BLOG_POSTS = [
     author: 'JMJ Solutions Team',
     tags: ['CCTV', 'Installation Guide', 'Mumbai', 'Security'],
     content: `
-      <p>Security is a top priority for every homeowner and business owner in Mumbai. With rising urban crime rates, installing a reliable CCTV surveillance system has become essential. At <strong>JMJ Solutions</strong>, we have been providing top-notch CCTV installation services across Mumbai, Thane, and Navi Mumbai since 2015.</p>
+      <p>Security is a top priority for every homeowner and business owner in Mumbai. With rising urban crime rates, installing a reliable CCTV surveillance system has become essential. At <strong>JMJ Solutions</strong>, we have been providing top-notch CCTV installation services across Mumbai, Thane, and Navi Mumbai since July 2016.</p>
       <h2>Types of CCTV Cameras Available</h2>
       <p>Understanding the different types of CCTV cameras helps you make an informed decision:</p>
       <ul>
@@ -534,7 +535,7 @@ export const BLOG_POSTS = [
 
 export const SEO_DEFAULTS = {
   title: 'JMJ Solutions | Premium Security & Surveillance Systems in Mumbai',
-  description: 'JMJ Solutions — Mumbai\'s trusted security partner since 2015. Specializing in CCTV, Video Door Phone, EPABX, Access Control, Boom Barrier & Tripod Systems. 150+ residential societies served.',
+  description: 'JMJ Solutions — Mumbai\'s trusted security partner since July 2016. Specializing in CCTV, Video Door Phone, EPABX, Access Control, Boom Barrier & Tripod Systems. 150+ residential societies served.',
   keywords: 'CCTV installation Mumbai, security systems Thane, video door phone, EPABX system, access control, boom barrier, tripod turnstile, CP Plus, Hikvision, Dahua, security solutions Mumbai, JMJ Solutions',
   ogImage: '/og-image.jpg',
   url: 'https://jmjsolutions.in',
