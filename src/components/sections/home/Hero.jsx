@@ -1,5 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Shield, Play, ChevronLeft, ChevronRight, ArrowRight, CheckCircle } from 'lucide-react';
+
+const hideSplash = () => {
+  const s = document.getElementById('splash');
+  if (s) s.style.display = 'none';
+};
 import Button from '../../shared/Button';
 import ScrollReveal from '../../shared/ScrollReveal';
 import { COMPANY } from '../../../utils/constants';
@@ -32,6 +37,7 @@ export default function Hero() {
   const prev = useCallback(() => setCurrent((p) => (p - 1 + slides.length) % slides.length), []);
 
   useEffect(() => {
+    hideSplash();
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [next]);
@@ -45,15 +51,18 @@ export default function Hero() {
             i === current ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img
-            src={slide.image}
-            alt={`${slide.highlight} — JMJ Solutions security systems Mumbai Thane`}
-            width={1920}
-            height={1280}
-            className="w-full h-full object-cover"
-            loading={i === 0 ? 'eager' : 'lazy'}
-            fetchpriority={i === 0 ? 'high' : 'auto'}
-          />
+          <picture>
+            <source srcSet={slide.image.replace('.jpg', '.webp')} type="image/webp" />
+            <img
+              src={slide.image}
+              alt={`${slide.highlight} — JMJ Solutions security systems Mumbai Thane`}
+              width={1920}
+              height={1280}
+              className="w-full h-full object-cover"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : 'auto'}
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60" />
         </div>
