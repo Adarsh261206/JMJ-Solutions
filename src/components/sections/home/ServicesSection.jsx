@@ -76,11 +76,10 @@ export default function ServicesSection() {
 
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex gap-5 overflow-hidden pb-4 -mx-4 px-4"
           >
             {filtered.map((service, i) => (
-              <ScrollReveal key={service.id} delay={i * 0.03} className="snap-start shrink-0 w-[280px] sm:w-[300px] md:w-[320px]">
+              <div key={service.id} className="shrink-0 w-[280px] sm:w-[300px] md:w-[320px]">
                 <Link to={`/product/${service.id}`} className="group block h-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 ring-1 ring-black/5 hover:ring-accent/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 h-full flex flex-col">
                     <div className="relative h-48 overflow-hidden shrink-0">
@@ -113,7 +112,7 @@ export default function ServicesSection() {
                     </div>
                   </div>
                 </Link>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>
