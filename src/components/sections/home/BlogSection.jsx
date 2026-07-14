@@ -6,8 +6,9 @@ import { BLOG_POSTS } from '../../../utils/constants';
 
 export default function BlogSection() {
   return (
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container-page">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-surface to-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="container-page relative">
         <SectionHeader
           title="Our Latest Blog"
           subtitle="Checkout our blog articles and product updates — expert insights on security, surveillance, and safety solutions."
@@ -18,7 +19,7 @@ export default function BlogSection() {
             <ScrollReveal key={post.id} delay={i * 0.05}>
               <Link
                 to={`/blog/${post.slug}`}
-                className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-xl block"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 ring-1 ring-black/5 hover:ring-accent/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -29,7 +30,7 @@ export default function BlogSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
                       {post.tags[0]}
                     </span>
                   </div>
@@ -52,7 +53,7 @@ export default function BlogSection() {
                     {post.excerpt}
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:text-accent-light transition-colors">
-                    Read More <ArrowRight className="w-4 h-4" />
+                    Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>
@@ -63,7 +64,7 @@ export default function BlogSection() {
         <ScrollReveal className="text-center mt-12">
           <Link
             to="/blog"
-            className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 px-8 py-4 text-lg bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl active:scale-[0.98]"
+            className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 px-8 py-4 text-lg text-white bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30 active:scale-[0.98]"
           >
             View All Articles <ArrowRight className="w-5 h-5 ml-2" />
           </Link>
