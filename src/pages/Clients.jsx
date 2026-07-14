@@ -41,6 +41,7 @@ export default function Clients() {
                     <Building2 className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-semibold text-primary mb-1">{client.name}</h3>
+                  {client.person && <p className="text-xs text-accent/70 font-medium mb-0.5">{client.person}</p>}
                   <p className="text-sm text-gray-500">{client.location}</p>
                 </div>
               </ScrollReveal>
@@ -71,6 +72,7 @@ export default function Clients() {
                     <Home className="w-5 h-5 text-accent" />
                   </div>
                   <h3 className="font-semibold text-primary mb-1">{client.name}</h3>
+                  {client.person && <p className="text-xs text-accent/70 font-medium mb-0.5">{client.person}</p>}
                   <p className="text-sm text-gray-500">{client.location}</p>
                 </div>
               </ScrollReveal>

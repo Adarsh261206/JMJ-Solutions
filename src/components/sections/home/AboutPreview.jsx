@@ -1,6 +1,7 @@
 import { ArrowRight, Eye, Target, Heart } from 'lucide-react';
 import Button from '../../shared/Button';
 import ScrollReveal from '../../shared/ScrollReveal';
+import { COMPANY } from '../../../utils/constants';
 
 const values = [
   { icon: Eye, title: 'Our Vision', text: 'To be Mumbai\'s most trusted security solutions provider, setting the standard for quality and reliability in surveillance systems.' },
@@ -33,10 +34,10 @@ export default function AboutPreview() {
           <ScrollReveal direction="right">
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">About Us</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-              Mumbai&apos;s Trusted Security Partner Since 2015
+              Mumbai&apos;s Trusted Security Partner Since 2016
             </h2>
             <p className="text-text-secondary text-lg leading-relaxed mb-8">
-              Established in July 2015, JMJ Solutions has been at the forefront of security and surveillance 
+              Established in July 2016, JMJ Solutions has been at the forefront of security and surveillance 
               systems in Mumbai. We cater to over 150+ residential societies across Mumbai, along with 
               commercial sectors including restaurants, schools, colleges, warehouses, and corporate offices. 
               Our motto is simple: deliver quality service in quality time and within customer budget.

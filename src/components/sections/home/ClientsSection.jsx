@@ -56,7 +56,8 @@ function ClientCard({ client, type }) {
             <Icon className="w-4 h-4" />
           </div>
           <div className="min-w-0 flex-1">
-            <h4 className="font-semibold text-primary text-sm leading-tight mb-1">{client.name}</h4>
+            <h4 className="font-semibold text-primary text-sm leading-tight mb-0.5">{client.name}</h4>
+            {client.person && <p className="text-[11px] text-text-secondary mb-1">{client.person}</p>}
             <a
               href={mapsUrl}
               target="_blank"
