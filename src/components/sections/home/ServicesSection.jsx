@@ -25,7 +25,7 @@ function CategorySection({ category, index }) {
             <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl opacity-0 group-hover/banner:opacity-100 transition-opacity duration-500" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl opacity-0 group-hover/banner:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex items-center gap-4">
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border transition-all duration-500 bg-surface ${colors.badge} border-border/60 group-hover/banner:bg-white/15 group-hover/banner:border-white/10`}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-border/60 bg-surface">
                 <span className="font-bold text-xl text-text-secondary">{index + 1}</span>
               </div>
               <div className="flex-1 min-w-0">
