@@ -3,7 +3,7 @@ import ScrollReveal from '../../shared/ScrollReveal';
 
 export default function Brands() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-surface to-white relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">
         <SectionHeader

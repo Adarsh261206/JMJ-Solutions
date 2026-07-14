@@ -6,7 +6,7 @@ import { BLOG_POSTS } from '../../../utils/constants';
 
 export default function BlogSection() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-surface to-white relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">
         <SectionHeader

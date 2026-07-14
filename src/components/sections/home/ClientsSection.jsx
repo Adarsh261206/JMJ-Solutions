@@ -81,7 +81,7 @@ function ClientCard({ client, type }) {
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="py-16 md:py-28 bg-gradient-to-br from-surface via-white to-surface relative overflow-hidden">
+    <section id="clients" className="py-16 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 

@@ -16,7 +16,7 @@ const iconMap = {
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-20 md:py-28 bg-surface">
+    <section id="industries" className="py-20 md:py-28 bg-white">
       <div className="container-page">
         <SectionHeader
           title="Industries We Serve"

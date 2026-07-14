@@ -31,7 +31,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white via-surface to-white relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">

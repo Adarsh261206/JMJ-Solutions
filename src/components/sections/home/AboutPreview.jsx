@@ -11,7 +11,7 @@ const values = [
 
 export default function AboutPreview() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-surface via-white to-surface relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="absolute top-40 -left-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">

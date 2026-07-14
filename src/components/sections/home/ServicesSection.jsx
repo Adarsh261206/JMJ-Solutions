@@ -82,7 +82,7 @@ function CategorySection({ category, index }) {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-gradient-to-b from-surface via-white to-surface relative overflow-hidden">
+    <section id="services" className="py-20 md:py-28 bg-surface relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-gradient-to-b from-accent/[0.03] to-transparent pointer-events-none" />
       <div className="absolute bottom-0 -left-20 w-80 h-80 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 -right-20 w-96 h-96 bg-accent/[0.02] rounded-full blur-3xl pointer-events-none" />

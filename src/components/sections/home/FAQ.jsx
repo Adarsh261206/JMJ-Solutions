@@ -47,7 +47,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-surface via-white to-surface relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-surface relative overflow-hidden">
       <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-accent/[0.03] rounded-full blur-3xl pointer-events-none" />
       <div className="container-page relative">
         <SectionHeader
