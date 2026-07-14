@@ -11,7 +11,7 @@ export default function Blog() {
 
       <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/hero-2.jpg" alt="Security surveillance blog — JMJ Solutions CCTV and security insights Mumbai" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/hero-2.jpg" alt="Security surveillance blog — JMJ Solutions CCTV and security insights Mumbai" width={1920} height={1282} className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
         </div>
         <div className="container-page relative z-10">
@@ -38,12 +38,15 @@ export default function Blog() {
                   className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-xl block"
                 >
                   <div className="relative h-56 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                    />
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        width={800}
+                        height={533}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">
                       <span className="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">

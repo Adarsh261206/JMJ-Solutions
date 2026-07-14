@@ -44,12 +44,15 @@ function CategorySection({ category, index }) {
               <ScrollReveal key={service.id}>
                 <div className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300">
                   <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                    />
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
                       {Icon && (
@@ -101,7 +104,7 @@ export default function Services() {
 
       <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/hero-2.jpg" alt="JMJ Solutions security products and services — CCTV, access control, EPABX, boom barrier, tripod systems Mumbai" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/hero-2.jpg" alt="JMJ Solutions security products and services — CCTV, access control, EPABX, boom barrier, tripod systems Mumbai" width={1920} height={1282} className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
         </div>
         <div className="container-page relative z-10">

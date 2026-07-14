@@ -13,6 +13,7 @@ function FAQItem({ item, isOpen, onToggle }) {
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between p-5 text-left transition-colors duration-200 cursor-pointer"
+        aria-expanded={isOpen}
       >
         <span className={`font-semibold pr-4 transition-colors duration-300 ${isOpen ? 'text-accent' : 'text-primary'}`}>{item.q}</span>
         <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${

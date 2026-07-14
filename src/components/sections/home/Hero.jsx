@@ -48,8 +48,11 @@ export default function Hero() {
           <img
             src={slide.image}
             alt={`${slide.highlight} — JMJ Solutions security systems Mumbai Thane`}
+            width={1920}
+            height={1280}
             className="w-full h-full object-cover"
             loading={i === 0 ? 'eager' : 'lazy'}
+            fetchpriority={i === 0 ? 'high' : 'auto'}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60" />
@@ -115,20 +118,20 @@ export default function Hero() {
         </ScrollReveal>
       </div>
 
-      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg flex items-center justify-center text-primary hover:bg-white transition-colors hidden md:flex" aria-label="Previous slide">
+      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg flex items-center justify-center text-primary hover:bg-white transition-colors hidden md:flex" aria-label="Previous slide">
         <ChevronLeft className="w-5 h-5" />
       </button>
-      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg flex items-center justify-center text-primary hover:bg-white transition-colors hidden md:flex" aria-label="Next slide">
+      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-border shadow-lg flex items-center justify-center text-primary hover:bg-white transition-colors hidden md:flex" aria-label="Next slide">
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? 'bg-accent w-8' : 'bg-primary/20 hover:bg-primary/40 w-2'
+            className={`flex items-center justify-center rounded-full transition-all duration-300 ${
+              i === current ? 'bg-accent w-10 h-3' : 'bg-primary/30 hover:bg-primary/50 w-3 h-3'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />

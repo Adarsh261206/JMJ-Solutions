@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <img src="/logo.png" alt="JMJ Solutions" className="h-8 w-auto" />
+              <img src="/logo.png" alt="JMJ Solutions" width={512} height={512} className="h-8 w-auto" />
               {COMPANY.name}
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
@@ -24,8 +24,8 @@ export default function Footer() {
                 <a
                   key={social}
                   href="#"
-                  className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-accent transition-colors duration-200"
-                  aria-label={social}
+                  className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center hover:bg-accent transition-colors duration-200"
+                  aria-label={`Follow us on ${social}`}
                 >
                   <span className="text-xs font-bold uppercase">{social[0]}</span>
                 </a>

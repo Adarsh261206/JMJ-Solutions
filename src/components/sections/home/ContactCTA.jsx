@@ -7,7 +7,7 @@ export default function ContactCTA() {
   return (
     <section className="relative py-20 md:py-28 bg-primary-dark overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/images/hero-3.jpg" alt="Call to action — Secure your premises with JMJ Solutions CCTV and security systems Mumbai" className="w-full h-full object-cover opacity-20" />
+        <img src="/images/hero-3.jpg" alt="Call to action — Secure your premises with JMJ Solutions CCTV and security systems Mumbai" width={1920} height={1280} className="w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-primary-dark opacity-90" />
       </div>
 

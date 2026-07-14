@@ -32,8 +32,11 @@ export default function Industries() {
                   <img
                     src={industry.image}
                     alt={industry.name}
+                    width={600}
+                    height={400}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent group-hover:from-primary-dark/95 transition-all duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">

@@ -59,8 +59,11 @@ export default function Testimonials() {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    width={100}
+                    height={100}
                     className="w-12 h-12 rounded-full object-cover bg-primary/10 shrink-0 ring-2 ring-white shadow-md"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div>
                     <p className="font-bold text-primary text-sm">{testimonial.name}</p>

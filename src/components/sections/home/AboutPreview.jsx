@@ -22,8 +22,11 @@ export default function AboutPreview() {
                 <img
                   src="/images/product-cctv.jpg"
                   alt="CCTV Camera Installation"
+                  width={447}
+                  height={447}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-accent to-accent-light text-white p-6 rounded-2xl shadow-2xl hidden md:block ring-1 ring-white/20">

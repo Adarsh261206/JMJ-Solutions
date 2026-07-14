@@ -113,7 +113,7 @@ export default function Header() {
     }`}>
       <div className="container-page flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="JMJ Solutions" className="h-9 w-auto" />
+          <img src="/logo.png" alt="JMJ Solutions" width={512} height={512} className="h-9 w-auto" />
           <span className={`font-bold text-xl transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-white'}`}>{COMPANY.name}</span>
         </Link>
 
@@ -179,7 +179,7 @@ export default function Header() {
 
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
+          className={`lg:hidden p-3 rounded-lg transition-colors ${
             isHome ? 'text-primary hover:bg-muted' : scrolled ? 'text-primary hover:bg-muted' : 'text-white hover:bg-white/10'
           }`}
           aria-label="Toggle navigation"

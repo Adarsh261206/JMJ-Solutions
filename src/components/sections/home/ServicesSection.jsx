@@ -59,7 +59,7 @@ export default function ServicesSection() {
             <button
               key={cat.name}
               onClick={() => setActiveCat(cat.name)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-300 cursor-pointer ${
+              className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold border transition-all duration-300 cursor-pointer min-h-[44px] ${
                 activeCat === cat.name
                   ? `${cat.bg} ${cat.text} ${cat.border} shadow-sm`
                   : 'bg-white text-text-secondary border-border/60 hover:border-border hover:shadow-sm'
@@ -78,13 +78,15 @@ export default function ServicesSection() {
         <div className="relative group/carousel">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+            aria-label="Scroll products left"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100"
+            aria-label="Scroll products right"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -103,8 +105,11 @@ export default function ServicesSection() {
                       <img
                         src={service.image}
                         alt={service.title}
+                        width={400}
+                        height={300}
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="absolute top-3 left-3">

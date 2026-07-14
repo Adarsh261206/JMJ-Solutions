@@ -33,7 +33,7 @@ export default function About() {
 
       <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about.jpg" alt="JMJ Solutions security team — Mumbai's trusted CCTV and surveillance company" className="w-full h-full object-cover opacity-30" />
+          <img src="/images/about.jpg" alt="JMJ Solutions security team — Mumbai's trusted CCTV and surveillance company" width={1200} height={800} className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
         </div>
         <div className="container-page relative z-10">
@@ -54,8 +54,11 @@ export default function About() {
                 <img
                   src="/images/service-cctv.jpg"
                   alt="CCTV Installation"
+                  width={800}
+                  height={533}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>
@@ -86,7 +89,7 @@ export default function About() {
             <ScrollReveal direction="left">
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full">
                 <div className="h-48 overflow-hidden">
-                  <img src="/images/industry-corporate.jpg" alt="Our Mission" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/images/industry-corporate.jpg" alt="Our Mission" width={600} height={400} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-8">
                   <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
@@ -104,7 +107,7 @@ export default function About() {
             <ScrollReveal direction="right">
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full">
                 <div className="h-48 overflow-hidden">
-                  <img src="/images/industry-corporate.jpg" alt="Our Vision" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/images/industry-corporate.jpg" alt="Our Vision" width={600} height={400} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-8">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">

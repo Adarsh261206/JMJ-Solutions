@@ -31,7 +31,7 @@ export default function ProductDetail() {
 
       <section className="relative bg-primary-dark py-24 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src={service.image} alt={`${service.title} — JMJ Solutions premium security product Mumbai`} className="w-full h-full object-cover opacity-30" />
+          <img src={service.image} alt={`${service.title} — JMJ Solutions premium security product Mumbai`} width={400} height={300} className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 to-primary-dark/80" />
         </div>
         <div className="container-page relative z-10">
@@ -58,8 +58,11 @@ export default function ProductDetail() {
                 <img
                   src={service.image}
                   alt={service.title}
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>

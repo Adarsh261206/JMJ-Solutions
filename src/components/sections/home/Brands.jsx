@@ -23,8 +23,11 @@ export default function Brands() {
             <img
               src="/images/we-deals-brands.jpg"
               alt="Top security brands — CP Plus, Hikvision, Dahua, ESSL, Crystel — JMJ Solutions Mumbai"
+              width={1200}
+              height={235}
               className="w-full h-auto object-contain bg-white"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </ScrollReveal>
