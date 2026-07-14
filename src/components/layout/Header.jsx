@@ -112,9 +112,9 @@ export default function Header() {
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container-page flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className={`flex items-center gap-2 font-bold text-xl transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-white'}`}>
-          <Shield className={`w-6 h-6 transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-accent-light'}`} />
-          <span>{COMPANY.name}</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo.png" alt="JMJ Solutions" className="h-9 w-auto" />
+          <span className={`font-bold text-xl transition-colors duration-300 ${isHome ? 'text-primary' : scrolled ? 'text-primary' : 'text-white'}`}>{COMPANY.name}</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

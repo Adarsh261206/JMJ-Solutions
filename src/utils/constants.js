@@ -18,7 +18,7 @@ export const COMPANY = {
   state: 'Maharashtra',
   pincode: '400606',
   area: 'Mumbai Metropolitan Region',
-  mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.051217320588!2d72.9773!3d19.2181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEzJzA1LjIiTiA3MsKwNTgnMzguMyJF!5e0!3m2!1sen!2sin!4v1',
+  mapEmbed: 'https://www.google.com/maps?q=Govind+Niwas+Siddhivinayak+Park+Thane+West&output=embed',
   hours: 'Mon - Sat: 9:00 AM - 7:00 PM',
 };
 
